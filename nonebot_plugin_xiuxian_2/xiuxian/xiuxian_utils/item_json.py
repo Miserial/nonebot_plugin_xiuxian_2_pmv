@@ -2,11 +2,12 @@ try:
     import ujson as json
 except ImportError:
     import json
+import tomllib
 import os
 from pathlib import Path
 from typing import List
 
-READPATH = Path() / "data" / "xiuxian"
+READPATH = Path() / "static" / "xiuxian"
 SKILLPATH = READPATH / "功法"
 WEAPONPATH = READPATH / "装备"
 ELIXIRPATH = READPATH / "丹药"
@@ -49,10 +50,14 @@ class Items:
         self.set_item_data(self.get_special_data(), "特殊物品") 
         self.savef(self.items)
 
-    def readf(self, FILEPATH):
-        with open(FILEPATH, "r", encoding="UTF-8") as f:
-            data = f.read()
-        return json.loads(data)
+    def readf(self, FILEPATH:Path):
+        if "static" in str(FILEPATH):
+            with open(FILEPATH.with_suffix(".toml"), "rb") as f:
+                return tomllib.load(f)
+        else:
+            with open(FILEPATH, "r", encoding="UTF-8") as f:
+                data = f.read()
+            return json.loads(data)
 
     def savef(self, data):
         FILEPATH = Path() / "data" / "xiuxian" / "items.json"

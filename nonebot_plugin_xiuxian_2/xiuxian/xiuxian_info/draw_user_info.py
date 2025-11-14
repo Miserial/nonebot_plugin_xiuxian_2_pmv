@@ -11,12 +11,12 @@ from pathlib import Path
 from .download import get_avatar_by_user_id_and_save
 from .send_image_tool import convert_img
 
-TEXT_PATH = Path() / "data" / "xiuxian" / "info_img"
+TEXT_PATH = Path() / "static" / "xiuxian" / "info_img"
 
 first_color = (242, 250, 242)
 second_color = (57, 57, 57)
 
-FONT_ORIGIN_PATH = Path() / "data" / "xiuxian" / "font" / "SourceHanSerifCN-Heavy.otf"
+FONT_ORIGIN_PATH = Path() / "static" / "xiuxian" / "font" / "SourceHanSerifCN-Heavy.otf"
 
 
 def font_origin(size: int) -> ImageFont.FreeTypeFont:

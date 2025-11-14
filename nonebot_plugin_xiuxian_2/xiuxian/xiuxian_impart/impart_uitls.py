@@ -6,7 +6,7 @@ from ..xiuxian_utils.xiuxian2_handle import XIUXIAN_IMPART_BUFF
 from .impart_data import impart_data_json
 
 xiuxian_impart = XIUXIAN_IMPART_BUFF()
-img_path = Path() / "data" / "xiuxian" / "卡图"
+img_path = Path() / "static" / "xiuxian" / "卡图" #TODO:upload
 
 def random_int():
     return numpy.random.randint(low=0, high=10000, size=None, dtype="l")

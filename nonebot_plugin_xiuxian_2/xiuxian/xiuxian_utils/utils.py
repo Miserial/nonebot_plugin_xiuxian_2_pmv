@@ -29,7 +29,7 @@ from nonebot.internal.adapter import Message
 from typing import Union
 
 sql_message = XiuxianDateManage()  # sql类
-boss_img_path = Path() / "data" / "xiuxian" / "boss_img"
+boss_img_path = Path() / "static" / "xiuxian" / "boss_img"
 
 
 class MyEncoder(json.JSONEncoder):

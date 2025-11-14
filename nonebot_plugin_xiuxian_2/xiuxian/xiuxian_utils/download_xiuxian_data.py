@@ -72,7 +72,7 @@ class UpdateManager:
     
     def get_current_version(self):
         """获取当前版本"""
-        version_file = Path() / "data" / "xiuxian" / "version.txt"
+        version_file = Path() / "static" / "xiuxian" / "version.txt"
         if version_file.exists():
             try:
                 with open(version_file, 'r', encoding='utf-8') as f:
@@ -367,7 +367,7 @@ class UpdateManager:
             releases = self.get_latest_releases(1)
             if releases:
                 latest_version = releases[0]['tag_name']
-                version_file = Path() / "data" / "xiuxian" / "version.txt"
+                version_file = Path() / "static" / "xiuxian" / "version.txt"
                 version_file.parent.mkdir(parents=True, exist_ok=True)
                 
                 with open(version_file, 'w', encoding='utf-8') as f:
@@ -703,7 +703,7 @@ class UpdateManager:
             version_match = re.search(r'backup_.*_(v?[\d.]+)\.zip', backup_filename)
             if version_match:
                 version = version_match.group(1)
-                version_file = Path() / "data" / "xiuxian" / "version.txt"
+                version_file = Path() / "static" / "xiuxian" / "version.txt"
                 version_file.parent.mkdir(parents=True, exist_ok=True)
                 with open(version_file, 'w', encoding='utf-8') as f:
                     f.write(version)

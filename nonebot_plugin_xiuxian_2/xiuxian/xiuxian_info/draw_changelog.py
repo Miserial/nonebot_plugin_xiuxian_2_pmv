@@ -8,7 +8,7 @@ import textwrap
 API_URL = "https://api.github.com/repos/liyw0205/nonebot_plugin_xiuxian_2_pmv/commits"
 ITEMS_PER_PAGE = 10  # 每页显示的条目数
 
-FONT_PATH = Path() / "data" / "xiuxian" / "font" / "SourceHanSerifCN-Heavy.otf"
+FONT_PATH = Path() / "static" / "xiuxian" / "font" / "SourceHanSerifCN-Heavy.otf"
 
 
 def get_commits(page: int, per_page: int = ITEMS_PER_PAGE):
